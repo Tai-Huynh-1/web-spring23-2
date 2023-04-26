@@ -1,0 +1,25 @@
+/* CSS: Cascading Stylesheet */
+/* Use a selector to target a tag then apply styles to it */
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	border: 1px solid black;
+}
+
+/* ul,
+ol {
+	list-style: upper-roman;
+} */
+
+body {
+	margin: 0;
+}
+
+div {
+	border: 1px solid black;
+	height: 10px;
+}
