@@ -5,6 +5,10 @@
 		<title>My Page Title</title>
 		<link rel="icon" type="image/x-icon" href="" />
 		<link rel="stylesheet" href="index.css" type="text/css" />
+		<!-- External style from 3rd party -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&family=Sigmar&display=swap" rel="stylesheet" />
 	</head>
 
 	<!-- <body> tag is used to showcase the body of the web page (UI) -->
@@ -18,6 +22,7 @@
 			<h5>H5</h5>
 			<h6>H6</h6>
 
+			<!-- in-line style with "style" attribute -->
 			<p style="color: red">This is a paragraph.</p>
 
 			<p>This is a <strong>strong</strong> paragraph.</p>
@@ -69,9 +74,46 @@
 
 			<!-- <div> and certain other HTML tags are block-level elements - they take up full width available -->
 			<!-- <div> has display of "block" -->
-			<div></div>
-			<div></div>
-			<div></div>
+			<div>a</div>
+			<div>b</div>
+			<div>c</div>
+
+			<p>Custom paragraph with <span>span</span>.</p>
+
+			<section>
+				<form onsubmit="" onreset="">
+					<!-- 3 different ways to use label -->
+					<label for="name">
+						Name:
+						<input id="name" type="text" required />
+					</label>
+
+					<label for="email">Email</label>
+					<input id="email" type="email" required />
+
+					<label>
+						Password:
+						<input type="password" required />
+					</label>
+
+					<label for="" avatar>
+						Avatar Image:
+						<input id="avatar" type="file" required />
+					</label>
+
+					<button type="reset">Reset</button>
+					<button type="submit">Submit</button>
+				</form>
+			</section>
+
+			<!-- CSS Selectors -->
+			<!-- CSS Priority: !important > in-line style > id > last class in stylesheet -->
+			<div id="box1" class="box-100 border-1">Box 1</div>
+			<div id="box2" class="box-100 border-1">Box 2</div>
+
+			<div id="box3" class="box-100 border-1 bg-red bg-blueviolet" style="background-color: orchid !important">Box 3</div>
+
+			<div class="shipping-container"></div>
 		</main>
 	</body>
 </html>
