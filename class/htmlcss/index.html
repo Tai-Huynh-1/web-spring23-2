@@ -22,6 +22,8 @@
 			<h5>H5</h5>
 			<h6>H6</h6>
 
+			<div class="nav"></div>
+
 			<!-- in-line style with "style" attribute -->
 			<p style="color: red">This is a paragraph.</p>
 
@@ -74,11 +76,17 @@
 
 			<!-- <div> and certain other HTML tags are block-level elements - they take up full width available -->
 			<!-- <div> has display of "block" -->
-			<div>a</div>
+			<div style="padding: 5px; margin-bottom: 5px">a</div>
+			<button class="awesome-button">Awesome Button</button>
 			<div>b</div>
 			<div>c</div>
 
+			<br />
+			<hr />
+
 			<p>Custom paragraph with <span>span</span>.</p>
+
+			<!-- !important class > style > id > last class > any class that comes before -->
 
 			<section>
 				<form onsubmit="" onreset="">
@@ -108,12 +116,30 @@
 
 			<!-- CSS Selectors -->
 			<!-- CSS Priority: !important > in-line style > id > last class in stylesheet -->
-			<div id="box1" class="box-100 border-1">Box 1</div>
+			<div id="box1" class="box-100 border-1"></div>
 			<div id="box2" class="box-100 border-1">Box 2</div>
 
 			<div id="box3" class="box-100 border-1 bg-red bg-blueviolet" style="background-color: orchid !important">Box 3</div>
 
 			<div class="shipping-container"></div>
+
+			<!-- CSS Positioning -->
+			<!-- 5 Positions: relative, absolute, fixed, sticky, static (default) -->
+
+			<!-- relative: makes element move relative to its original position, but still occupy the original space -->
+
+			<!-- absolute: leaves behind space that can be occupied by another element, positioned relative to the nearest positioned ancestor -->
+
+			<!-- fixed: moves relative to the viewport, leaves behind space to be filled -->
+
+			<!-- sticky: starts as relative then switches to fixed position and sticks there -->
+
+			<div style="width: 300px; height: 300px; background-color: bisque; position: relative">
+				<div class="box-100 relative-box"></div>
+				<div class="box-100 absolute-box"></div>
+				<div class="box-100 fixed-box"></div>
+				<div class="box-100 sticky-box"></div>
+			</div>
 		</main>
 	</body>
 </html>
