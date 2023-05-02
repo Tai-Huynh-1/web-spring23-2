@@ -105,3 +105,42 @@ span {
 	position: sticky;
 	top: 0px;
 }
+
+.some-div {
+	position: static;
+	top: 0px;
+	left: 50px;
+}
+
+/* descendant selector example */
+/* target all <p> tags enclosed in a <div> NO MATTER HOW DEEPLY NESTED */
+div p {
+	color: rgb(0, 136, 255);
+}
+
+section p {
+	color: red;
+}
+
+/* child selector example */
+section > h1 {
+	color: green;
+}
+
+div > #mock-title {
+	color: rgb(255, 221, 127);
+}
+
+.mock-div > .mock-title {
+	color: rgb(253, 127, 255);
+}
+
+div > h1 {
+	color: aquamarine;
+}
+
+/* Adjacent Sibling Example */
+div + p {
+	background-color: rgb(183, 157, 52);
+}
+/* Madhuri, Rakesh,  3,4,7,8 */
