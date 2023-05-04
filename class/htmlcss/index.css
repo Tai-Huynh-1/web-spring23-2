@@ -143,4 +143,40 @@ div > h1 {
 div + p {
 	background-color: rgb(183, 157, 52);
 }
-/* Madhuri, Rakesh,  3,4,7,8 */
+
+/* pseudo-classes */
+a {
+	color: rgb(42, 162, 184);
+}
+
+a:active {
+	background-color: blue;
+}
+
+a:hover {
+	color: rgb(218, 78, 188);
+}
+
+.youtube-link:hover {
+	color: rgb(183, 157, 52);
+}
+
+/* 2n is every multiple of 2 children */
+ul > li:nth-child(2n) {
+	background-color: blueviolet;
+}
+
+ul > li:nth-child(3) {
+	background-color: brown;
+	color: white;
+}
+
+ul > li:nth-child(odd) {
+	color: aquamarine;
+}
+
+ol > li:nth-child(2n + 1) {
+	background-color: aquamarine;
+}
+/* n begins at 0 */
+/* 1, 3, 5, 7 */
