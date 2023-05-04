@@ -1,0 +1,18 @@
+.canvas {
+	height: 430px;
+	width: 400px;
+	background-color: rgb(117, 127, 135);
+	display: flex;
+}
+
+.right-orange {
+	width: 160px;
+	height: 310px;
+	background-color: orange;
+}
+
+.left-canvas {
+	width: 240px;
+	height: 100%;
+	background-color: rgb(53, 131, 117);
+}
