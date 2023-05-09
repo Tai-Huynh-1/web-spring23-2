@@ -209,3 +209,47 @@ ol > li:nth-child(2n + 1) {
 .self-center {
 	align-self: center;
 }
+
+/* Responsiveness with media queries */
+
+/* mobile-first approach */
+/* use min-width: when screen width is AT LEAST 600px or GREATER then apply these sets of styles */
+/* @media screen and (min-width: 600px) {
+	body {
+		background-color: blanchedalmond;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	body {
+		background-color: rgb(170, 148, 148);
+	}
+} */
+
+/* desktop-first approach */
+/* use max-width: when screen width is AT MOST 900px or LESS then apply these sets of styles */
+/* @media screen and (max-width: 900px) {
+	body {
+		background-color: rgb(170, 148, 148);
+	}
+}
+
+@media screen and (max-width: 600px) {
+	body {
+		background-color: rgb(32, 82, 132);
+	}
+} */
+
+/* transitions */
+.transition-div {
+	background-color: aquamarine;
+	width: 100px;
+	height: 100px;
+	transition: width 3s, height 6s;
+}
+
+.transition-div:hover {
+	width: 300px;
+	height: 300px;
+	transform: rotate(15deg);
+}
