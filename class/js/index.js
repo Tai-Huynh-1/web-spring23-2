@@ -55,16 +55,47 @@ let nameB;
 nameB = "Dave";
 // console.log("nameB", nameB); // Dave, not execute, Dave
 
+// REVIEW =============
+// var phone;
+// console.log(phone); // undefined
+// console.log(email); // reference err
+
+// const email = "jack@sf.com";
+// var phone = "phone number";
+
+// console.log(phone); // "phone number"
+// console.log(email); // "jack@sf.com"
+
 // 2 phases: 1. memory allocation (where hoisting happens) => 2. execution
 
 // hoisting with functions
 // USING A FUNCTION BEFORE DECLARING IT - functions get hoisted, BUT unlike 'var' functions still work normally
-// this only applies to functions declared using the 'function' keyword
+// this only applies to functions declared using the 'function' with proper function name keyword
 const result = multiply(5, 10); // invoke a function by calling its funcName()
 console.log("result", result);
+// var add = undefined
+console.log("add top", typeof add); // undefined => TypeError: add is not a function (add here is undefined)
 
+// console.log("divide", divide(100, 4)); // reference error
+
+// multiply gets hoisted
 function multiply(a, b) {
 	return a * b;
 }
 
-// typeof
+var add = function (a, b) {
+	return a + b;
+};
+
+// console.log("add", add(50, 45)); // 95
+console.log("add bottom", typeof add); // [Function: add]
+
+const divide = function (a, b) {
+	return a / b;
+};
+
+let subtract = function (a, b) {
+	return a - b;
+};
+
+// typeof: use this to print out the type of a variable or object / primitive
