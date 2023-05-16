@@ -36,7 +36,7 @@ console.log("arrB", arrB); // [10, 100] '000111'
 console.log("arrC", arrC); // [10]
 console.log("arrA === arrB", arrA === arrB); // '000111' === '000111' => true
 
-// pass by reference vs pass by value
+// pass by reference (copied by reference) vs pass by value (related to copy by value)
 function reassignA(primitive) {
 	primitive = 999;
 	return primitive;
@@ -55,3 +55,26 @@ let resultB = reassignB(arrEx);
 
 console.log(prim); // 999, 5 => 5
 console.log(arrEx); // [999], [] => [999]
+
+console.log("result a", resultA);
+console.log("result b", resultB);
+console.log("resultB === arrEx", resultB === arrEx); // true
+
+// REVIEW
+// // copy by value
+// let x = 5;
+// let y = x;
+
+// // compare by value
+// x === y; // true (comparing scalar value)
+// x = 10;
+// x === y; // false
+
+// // copy by reference
+// let arr1 = [1, 2, 3];
+// let arr2 = arr1;
+
+// // compare by reference
+// arr1 === arr2; // true
+// arr2.push(1000);
+// arr1 === arr2; // true
