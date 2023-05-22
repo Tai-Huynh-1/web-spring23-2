@@ -25,7 +25,19 @@ const student1 = {
 		return this[key];
 	},
 };
+// OBJECTIVE 1: write the code to add to the address object a key called "billingAddress" with the value "789 Wall St".
+student1.address.billingAddress = "789 Wall St";
+console.log(student1.address.billingAddress);
 
+// OBJECTIVE 2: write the code to remove "cs101" from the "enrollments" array, leaving the other 2 classes alone.
+// student1.enrollments.shift()
+
+student1.enrollments = student1.enrollments.filter(function (el) {
+	return el !== "cs101";
+});
+
+console.log(student1);
+console.log("*******************");
 // read properties / values from objects
 
 // console.log(student1.email);
@@ -45,18 +57,25 @@ console.log(student1);
 delete student1.isActive;
 console.log(student1);
 
-// update (adding property / insertion)
+// update (adding property / insertion) - KEYS IN OBJECTS ARE UNIQUE
 student1.isActive = "2 years"; // adding property is same syntax as updating - JS will check if the object has the key to update / reassign, otherwise if not, it will create that property/key as a new property
-console.log(student1);
 
 // order
+console.log(student1);
+console.log(student1.isActive); // can access isActive, even if it's re-added to the object at the end
+
+// OBJECTIVE 1: write the code to add to the address object a key called "billingAddress" with the value "789 Wall St".
+
+// OBJECTIVE 2: write the code to remove "cs101" from the "enrollments" array, leaving the other 2 classes alone.
 
 // const array = {
 // 	// ... other array properties
 // 	length: 0,
-// 	forEach: function (callbackfn, originalArray) {
-// 		for (let i = 0; i < originalArray.length; i++) {
-// 			callbackfn(originalArray[i], i, originalArray);
+// 	prototype: {
+// 		forEach: function (callbackfn, originalArray) {
+// 			for (let i = 0; i < originalArray.length; i++) {
+// 				callbackfn(originalArray[i], i, originalArray);
+// 			}
 // 		}
 // 	},
 // };

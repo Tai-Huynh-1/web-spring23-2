@@ -119,3 +119,5 @@ const times100 = arrB.reduce(function (accumlated, element) {
 
 console.log("times100", times100);
 console.log("times100 === arrB", times100 === arrB);
+
+// Loops & Nested loops & problem 4
