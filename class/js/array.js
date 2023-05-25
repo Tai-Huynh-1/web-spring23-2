@@ -97,7 +97,7 @@ console.log("***********************************************");
 loopCustomForEach(arrA);
 
 // Array.map() - loops over array, returns a new array, the array preserves the length of the original array
-const arrB = [10, 2, 3, 4, 12, 5, 6, 7, 9, 1];
+const arrB = [10, 2, 3, 4, 12, 1, 5, 6, 7, 9, 1];
 
 const returnedArray = arrB.map(function (element) {
 	return element * 100;
@@ -126,16 +126,17 @@ function whileLoop(array) {
 	while (i < array.length) {
 		const element = array[i];
 		console.log(element);
+		i++;
 	}
 }
 
 // const arrB = [10, 2, 3, 4, 12, 5, 6, 7, 9, 1];
 function doubleLoop(array, target) {
-	let counter = 1;
+	// let counter = 1;
 	for (let i = 0; i < array.length; i++) {
 		for (let j = 0; j < array.length; j++) {
-			console.log(`counter: ${counter} - i: ${i} - j: ${j}`);
-			counter++;
+			// console.log(`counter: ${counter} - i: ${i} - j: ${j}`);
+			// counter++;
 			const num1 = array[i];
 			const num2 = array[j];
 			const sum = num1 + num2;
@@ -147,7 +148,7 @@ function doubleLoop(array, target) {
 	return [-1, -1];
 }
 
-console.log("sum", doubleLoop(arrB, 2));
+// console.log("sum double loop", doubleLoop(arrB, 2));
 // HOW MANY TOTAL ITERATION TO FIND THE ANSWER ABOVE. [9, 9] => 100 iterations with 2x for-loop
 
 // time complexity for input size n = 10
@@ -158,8 +159,38 @@ console.log("sum", doubleLoop(arrB, 2));
 
 // time = O(n)
 // n = 10 => 10 ms
+// n = 100 => 100 ms
 // n = 1000 => 1000 ms
 
 // go through SUM problem and reduce to O(n)
+// const arrB = [10, 2, 3, 4, 12, 1, 5, 6, 7, 9, 1];
+function sumOneLoop(array, target) {
+	const map = new Map(); // {"10": 0, "2": 1, "3": 2, ..., "1": 5, ...}
+
+	for (let i = 0; i < array.length; i++) {
+		const num1 = array[i]; // 1
+		const num2 = target - num1; // 1
+		const num2Index = map.get(String(num2)); // map["1"] => 5
+
+		console.log("map", map);
+		if (num2Index !== undefined) {
+			return [i, num2Index];
+		} else {
+			map.set(String(num1), i);
+		}
+	}
+	return [-1, -1];
+}
+// time: O(n) - space: O(n)
+// console.log("sum one loop", sumOneLoop(arrB, 2));
 
 // copying arrays (deep & shallow)
+// Array.slice
+const stockPrices = [315, 50, 314, 684, 100, 648, 132, 50, 98, 45];
+// const newPricesSlice = stockPrices.slice();
+// console.log("stockPrices === newPricesSlice", stockPrices === newPricesSlice); // successfully created new copy
+// console.log("newPrices", newPricesSlice);
+
+const newPricesSpread = [...stockPrices];
+console.log("stockPrices === newPricesSpread", stockPrices === newPricesSpread);
+console.log("newPricesSpread", newPricesSpread);
