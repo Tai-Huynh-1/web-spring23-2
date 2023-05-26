@@ -88,6 +88,15 @@ function loopThruObject(object) {
 	}
 }
 
-loopThruObject(student1);
+// loopThruObject(student1);
 
 // copying objects (deep and shallow)
+const car = {
+	brand: "toyota",
+	registration: ["2001", "2002"],
+};
+
+const copyOfCar = { ...car };
+console.log(car === copyOfCar); // false
+console.log(car.brand === copyOfCar.brand); // true
+console.log(car.registration === copyOfCar.registration); // true (copied & compared by reference)
