@@ -97,6 +97,18 @@ const car = {
 };
 
 const copyOfCar = { ...car };
-console.log(car === copyOfCar); // false
-console.log(car.brand === copyOfCar.brand); // true
-console.log(car.registration === copyOfCar.registration); // true (copied & compared by reference)
+// console.log(car === copyOfCar); // false
+// console.log(car.brand === copyOfCar.brand); // true
+// console.log(car.registration === copyOfCar.registration); // true (copied & compared by reference)
+
+// JSON (JS object notation)
+// const copyByJson = JSON.parse(JSON.stringify(car));
+// console.log(car === copyByJson); // false
+// console.log(car.brand === copyByJson.brand); // true
+// console.log(car.registration === copyByJson.registration); // false
+
+// structured cloning (built into JS, but not available in all JS runtime environment)
+const structuredCar = structuredClone(car);
+console.log(car === structuredCar); // false
+console.log(car.brand === structuredCar.brand); // true
+console.log(car.registration === structuredCar.registration); // false

@@ -195,9 +195,11 @@ const newPricesSpread = [...stockPrices];
 // console.log("stockPrices === newPricesSpread", stockPrices === newPricesSpread);
 // console.log("newPricesSpread", newPricesSpread);
 
-const arrayWithObject = [{}, [], 1000];
+const arrayWithObject = [{}, [[{}], {}], 1000];
 // const newArrayWithObject = [...arrayWithObject];
+
 const newArrayWithObject = arrayWithObject.slice();
+
 console.log("compare arrays old vs new", arrayWithObject === newArrayWithObject); // false
 console.log("1st item", arrayWithObject[0] === newArrayWithObject[0]); // true (copied & compared by reference)
 console.log("2nd item", arrayWithObject[1] === newArrayWithObject[1]); // true (copied & compared by reference)
