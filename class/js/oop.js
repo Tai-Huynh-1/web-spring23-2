@@ -38,11 +38,10 @@ const bird = {
 
 // manually bind the "this" keyword to objects
 // const getNameFromDog = cat.getName.bind(dog);
-// console.log(getNameFromDog());
+// console.log(getNameFromDog(999, 1000));
 
 // console.log(cat.getName.call(dog, "arg1", "arg2"));
-// cat.getName.apply(null, ["arg3, arg4"]);
-cat.getName.apply(null, ["arg3", "arg4"]);
+// console.log(cat.getName.apply(dog, ["arg3", "arg4"]));
 
 // bind does not work with arrow functions
 // const getNameFromDogArrow = cat.getNameArrow.bind(dog);
@@ -80,3 +79,88 @@ cat.getName.apply(null, ["arg3", "arg4"]);
 // };
 
 // cow.getName.apply(null, ["arg9", "arg10"]);
+
+// WRITE THE CONSTRUCTOR FOR OBJECTS
+const car1 = {
+	brand: "ford",
+	year: "1990",
+	color: "red",
+	model: "mustang",
+};
+
+const car2 = {
+	brand: "toyota",
+	year: "1998",
+	color: "white",
+	model: "corolla",
+};
+
+// FAKE example of a constructor function
+function generateCar(brand, year, color, model) {
+	return {
+		brand: brand,
+		year: year,
+		color: color,
+		model: model,
+	};
+}
+// FAKE example of how to use constructor functions
+const car3 = generateCar("tesla", "2020", "white", "model y");
+
+// REAL CONSTRUCTOR FUNCTIONS
+function Car(brand, year, color, model) {
+	// notice, capital case function name & name should be the class of object
+	// we don't return anything from a constructor function
+	this.brand = brand;
+	this.year = year;
+	this.color = color;
+	this.model = model;
+}
+
+// methods in constructor functions or in the constructor's prototype
+Car.prototype.beep = function () {
+	console.log("beep beep");
+};
+
+// you can visualize a object to look something like this
+// const car6 = {
+// 	// ... custom properties,
+// 	prototype: {
+// 		beep: function () {
+// 			console.log("beep beep");
+// 		}
+// 	}
+// }
+
+const car4 = new Car("tesla", "2020", "red", "model 3");
+const car5 = new Car("toyota", "2022", "white", "prius");
+// console.log(car3);
+// console.log(car4);
+
+// ES6 "class" keyword
+class Store {
+	constructor(name, yearRegistered) {
+		this.name = name;
+		this.yearRegistered = yearRegistered;
+		this.isOpen = false;
+		this.numberOfEmployees = 0;
+	}
+
+	// es6 method notation
+	openStore() {
+		this.isOpen = true;
+	}
+
+	closeStore() {
+		this.isOpen = false;
+	}
+}
+
+const myBakery = new Store("85 degrees", "2023");
+console.log("before open", myBakery.isOpen);
+
+myBakery.openStore();
+console.log("after open", myBakery.isOpen);
+
+myBakery.closeStore();
+console.log("after closing", myBakery.isOpen);
