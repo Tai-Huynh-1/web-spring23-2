@@ -139,28 +139,67 @@ const car5 = new Car("toyota", "2022", "white", "prius");
 
 // ES6 "class" keyword
 class Store {
+	// OOP PRINCIPLES: ENCAPSULATION: using private variables and preventing them from being exposed;
+	#isOpen;
+
+	// turn 'numberOfEmployees' to a private variable
+	// write a method for returning the 'numberOfEmployees'
+	// write another method for updating the 'numberOfEmployees' - method should take in a number, if not a number, don't update it
+	#numberOfEmployees;
+
+	// utility variable or utility methods, we expose with the "static" keyword - just call store constructor to use
+	static maxYearOfRegistration = 25;
+
+	// constructors set instance level variables
 	constructor(name, yearRegistered) {
 		this.name = name;
 		this.yearRegistered = yearRegistered;
-		this.isOpen = false;
-		this.numberOfEmployees = 0;
+		this.#isOpen = false;
+		this.#numberOfEmployees = 0;
+
+		// methods for each instance (uses more memory since it gets created for each instance)
+		// this.openStore = function () {};
+		// this.closeStore = function () {};
 	}
 
-	// es6 method notation
+	// es6 method notation - these methods get stored in a single Store.prototype object
 	openStore() {
-		this.isOpen = true;
+		this.#isOpen = true;
 	}
 
 	closeStore() {
-		this.isOpen = false;
+		this.#isOpen = false;
+	}
+
+	// getter & setters
+	getIsOpen() {
+		return this.#isOpen;
+	}
+
+	getNumberOfEmployees() {
+		return this.#numberOfEmployees;
+	}
+
+	setNumberOfEmployees(newNumberOfEmployees) {
+		if (typeof newNumberOfEmployees !== "number") return;
+		this.#numberOfEmployees = newNumberOfEmployees;
 	}
 }
 
 const myBakery = new Store("85 degrees", "2023");
-console.log("before open", myBakery.isOpen);
+// console.log("before open", myBakery.getIsOpen());
 
-myBakery.openStore();
-console.log("after open", myBakery.isOpen);
+// myBakery.openStore();
+// console.log("after open", myBakery.getIsOpen());
 
-myBakery.closeStore();
-console.log("after closing", myBakery.isOpen);
+// myBakery.closeStore();
+// console.log("after closing", myBakery.getIsOpen());
+
+// console.log(Store.maxYearOfRegistration);
+// Example of static method on the Array constructor
+// console.log("is array", Array.isArray([]));
+// console.log("is array", Array.isArray(new Array()));
+
+console.log(myBakery.getNumberOfEmployees());
+myBakery.setNumberOfEmployees(100);
+console.log(myBakery.getNumberOfEmployees());
