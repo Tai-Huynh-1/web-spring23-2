@@ -212,8 +212,14 @@ class Vehicle {
 		this.brand = brand;
 		this.year = year;
 		this.color = color;
+
+		// methods inside of constructor become instance level methods, which uses more memory for storage
+		// this.useHorn = function () {
+		// 	console.log("beep beep!");
+		// };
 	}
 
+	// methods outside of constructor are added to prototype object when inherited
 	useHorn() {
 		console.log("beep beep!");
 	}
@@ -235,6 +241,11 @@ class SUV extends Vehicle {
 
 	static getType() {
 		return this.#type;
+	}
+
+	// override an inherited method
+	useHorn() {
+		console.log("honk! honk!");
 	}
 }
 
@@ -259,11 +270,17 @@ class Sedan {
 	}
 }
 
-console.log("my suv", new SUV("cadillac", "2023", "black", "4"));
-console.log("my sedan", new Sedan("mercedes", "2023", "white", "4"));
+const mySuv = new SUV("cadillac", "2023", "black", "4");
+const mySedan = new Sedan("mercedes", "2023", "white", "4");
+
+console.log("my suv", mySuv);
+console.log("my sedan", mySedan);
+
+mySuv.useHorn();
+mySedan.useHorn();
 
 // WHAT IS INHERITANCE & THE PROTOTYPE OBJECT?
 
-// COVER METHODS IN INHERITANCE
+// POLYMORPHISM: OVERRIDING (poly = many, morph = form) - 1 task/service/method, but implemented in many ways
 
 // COVER JS DOCS
