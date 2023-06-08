@@ -207,6 +207,13 @@ console.log(myBakery.getNumberOfEmployees());
 // OOP Principle: Inheritance (achieve this in JS using prototypes)
 // (inheritance => "is a" relationship from child to parent)
 // Vehicle class is the parent to the SUV & Sedan class. Vehicle class is the super class
+
+/**
+ * The base vehicle class with base variables and methods.
+ * @param brand - The vehicle's brand name as a string.
+ * @param year - The vehicle's year of production as a string.
+ * @param color - The vehicle's color as a string.
+ */
 class Vehicle {
 	constructor(brand, year, color) {
 		this.brand = brand;
@@ -220,6 +227,9 @@ class Vehicle {
 	}
 
 	// methods outside of constructor are added to prototype object when inherited
+	/**
+	 * The useHorn method allows the car to use the horn.
+	 */
 	useHorn() {
 		console.log("beep beep!");
 	}
@@ -244,8 +254,15 @@ class SUV extends Vehicle {
 	}
 
 	// override an inherited method
-	useHorn() {
-		console.log("honk! honk!");
+
+	/**
+	 * A method that overrides the Vehicle's class implementation of useHorn, it takes a custom sound parameter.
+	 * @param {*} sound - The sound to make when using the horn.
+	 * @returns Boolean indicating that the horn has been used successfully or not.
+	 */
+	useHorn(sound) {
+		console.log(sound);
+		return true;
 	}
 }
 
@@ -276,11 +293,8 @@ const mySedan = new Sedan("mercedes", "2023", "white", "4");
 console.log("my suv", mySuv);
 console.log("my sedan", mySedan);
 
-mySuv.useHorn();
-mySedan.useHorn();
+mySuv.useHorn("special sound");
 
 // WHAT IS INHERITANCE & THE PROTOTYPE OBJECT?
 
 // POLYMORPHISM: OVERRIDING (poly = many, morph = form) - 1 task/service/method, but implemented in many ways
-
-// COVER JS DOCS
