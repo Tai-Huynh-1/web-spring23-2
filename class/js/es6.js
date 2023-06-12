@@ -79,9 +79,11 @@ const userValues = Object.values(user);
 const userEntries = Object.entries(user);
 // console.log(userEntries);
 
-// closure: is created when a function is created, the closure guarentees that the function will always have access to the variable in its lexical scope at the time of  the function's creation
+// closure: is created when a function is created, the closure guarantees that the function will always have access to the variable in its lexical scope at the time of  the function's creation
 // function outer(a) {
+// 	const privateVariable = "my secret";
 // 	return function (b) {
+// 		console.log(privateVariable);
 // 		return a + b;
 // 	};
 // }
