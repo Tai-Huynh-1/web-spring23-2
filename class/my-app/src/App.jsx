@@ -1,14 +1,34 @@
 import { Component } from "react";
 import "./App.css";
+import ClockA from "./ClockA";
 
 class App extends Component {
-	// constructor() {}
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			showClockA: false,
+		};
+
+		this.handleToggleClockA = this.handleToggleClockA.bind(this);
+	}
+
+	handleToggleClockA(event) {
+		this.setState({
+			showClockA: !this.state.showClockA,
+		});
+	}
 
 	render() {
-		const name = "Jill";
-		const element = <h1>Hello, {name}</h1>;
-		console.log("element", element);
-		return element;
+		console.log("App rendering");
+		console.log("state", this.state.showClockA);
+
+		return (
+			<div>
+				{this.state.showClockA ? <ClockA /> : null}
+				<button onClick={this.handleToggleClockA}>Toggle ClockA</button>
+			</div>
+		);
 	}
 }
 
