@@ -1,6 +1,6 @@
 import React from "react";
 
-// functional components are originally called "stateless components" / "dumb components" (before hooks were introduced)
+// functional components are originally called "stateless components" / "dumb components" or "presentational components" (before hooks were introduced)
 function FormattedDate(props) {
 	console.log("functional component rendering");
 
@@ -17,7 +17,10 @@ class ClockA extends React.Component {
 		// maintain state of Clock component using "this.state = {}"
 		this.state = {
 			date: new Date(), // initialize the date state with new date object
+			counter: 0,
 		};
+
+		this.incrementCounter = this.incrementCounter.bind(this);
 	}
 
 	componentDidMount() {
@@ -46,14 +49,25 @@ class ClockA extends React.Component {
 		this.setState(newState);
 	}
 
+	incrementCounter() {
+		// pass a callback function to generate your state object to get access to most current state
+		// you might need to do this if your new state is somehow dependent on the value of your old state
+		this.setState((currState) => ({
+			counter: currState.counter + 1,
+		}));
+	}
+
 	// render method gets called when state changes
 	// React reacts to states and props changes (object reference)
 	render() {
 		console.log("ClockA rendering");
+		console.log("clock state", this.state);
 		return (
 			<div>
 				<h1>Hello, world!</h1>
 				<FormattedDate date={this.state.date} />
+				<div>Counter: {this.state.counter}</div>
+				<button onClick={this.incrementCounter}>Increment Counter</button>
 			</div>
 		);
 	}
