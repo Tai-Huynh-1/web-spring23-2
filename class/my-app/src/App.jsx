@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./App.css";
 import ClockA from "./components/ClockA";
 import Palindrome from "./components/Palindrome";
+import Homework1 from "./components/Homework1";
 
 class App extends Component {
 	constructor(props) {
@@ -14,7 +15,7 @@ class App extends Component {
 		this.handleToggleClockA = this.handleToggleClockA.bind(this);
 	}
 
-	handleToggleClockA(event) {
+	handleToggleClockA() {
 		this.setState({
 			showClockA: !this.state.showClockA,
 		});
