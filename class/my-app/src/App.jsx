@@ -3,6 +3,7 @@ import "./App.css";
 import ClockA from "./components/ClockA";
 import Palindrome from "./components/Palindrome";
 import Homework1 from "./components/Homework1";
+import PalindromeB from "./components/PalindromeB";
 
 class App extends Component {
 	constructor(props) {
@@ -33,7 +34,8 @@ class App extends Component {
 				</div>
 
 				<div>
-					<Palindrome />
+					{/* <Palindrome /> */}
+					<PalindromeB />
 				</div>
 			</div>
 		);

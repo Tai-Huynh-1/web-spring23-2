@@ -14,15 +14,44 @@ class Palindrome extends Component {
 	}
 
 	handleChange(event) {
-		this.setState({
-			text: event.target.value,
-		});
+		const inputId = event.target.id;
+		if (inputId === "palindrome") {
+			this.setState({
+				text: event.target.value,
+			});
+		} else {
+			this.setState({
+				textB: event.target.value,
+			});
+		}
 	}
 
-	handleClear() {
-		this.setState({
-			text: "",
-		});
+	handleClear(event) {
+		const buttonId = event.target.id;
+		switch (buttonId) {
+			case "clear":
+				this.setState({
+					text: "",
+				});
+				break;
+			case "clearB":
+				this.setState({
+					textB: "",
+				});
+				break;
+			default:
+				return;
+		}
+
+		// if (buttonId === "clear") {
+		// 	this.setState({
+		// 		text: "",
+		// 	});
+		// } else {
+		// 	this.setState({
+		// 		textB: "",
+		// 	});
+		// }
 	}
 
 	isPalindrome(string) {
@@ -43,15 +72,26 @@ class Palindrome extends Component {
 				<label id="palindrome">
 					Enter some text: <input id="palindrome" type="text" onChange={this.handleChange} value={this.state.text} />
 				</label>
-				<button type="button" onClick={this.handleClear}>
+				<button id="clear" type="button" onClick={this.handleClear}>
 					Clear
 				</button>
 
+				<br />
 				{/* TODO: Create a second input field here as a controlled component to update the "textB" state */}
+				<label id="palindromeB">
+					Enter some text: <input id="palindromeB" type="text" onChange={this.handleChange} value={this.state.textB} />
+				</label>
+				<button id="clearB" type="button" onClick={this.handleClear}>
+					Clear
+				</button>
 
 				<br />
 
 				<h2>{message}</h2>
+
+				<br />
+
+				<h2>{this.state.textB}</h2>
 			</div>
 		);
 	}
