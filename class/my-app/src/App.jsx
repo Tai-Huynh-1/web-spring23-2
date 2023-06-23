@@ -4,6 +4,8 @@ import ClockA from "./components/ClockA";
 import Palindrome from "./components/Palindrome";
 import Homework1 from "./components/Homework1";
 import PalindromeB from "./components/PalindromeB";
+import ClockB from "./components/ClockB";
+import TestEffect from "./components/TestEffect";
 
 class App extends Component {
 	constructor(props) {
@@ -28,14 +30,16 @@ class App extends Component {
 
 		return (
 			<div>
-				<div>
+				{/* <div>
 					{this.state.showClockA ? <ClockA /> : null}
 					<button onClick={this.handleToggleClockA}>Toggle ClockA</button>
-				</div>
+				</div> */}
 
 				<div>
 					{/* <Palindrome /> */}
-					<PalindromeB />
+					{/* <PalindromeB /> */}
+					{/* <ClockB /> */}
+					<TestEffect />
 				</div>
 			</div>
 		);

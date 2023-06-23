@@ -1,7 +1,7 @@
 import React from "react";
 
 // functional components are originally called "stateless components" / "dumb components" or "presentational components" (before hooks were introduced)
-function FormattedDate(props) {
+export function FormattedDate(props) {
 	console.log("functional component rendering");
 
 	const { date } = props;
