@@ -15,6 +15,13 @@ function generateDiceNumber() {
  * Step 3:
  * ... Add more steps as you need
  *
+ *
+ * TODO: Explain: What is the difference between useCallback and useMemo
+ *
+ *
+ *
+ * TODO: After you're done with the above. Make sure you play around with the component to
+ * make sure you understand how useMemo is working with and without the dependency array.
  */
 const Dice = () => {
 	const [counter, setCounter] = useState(0);
