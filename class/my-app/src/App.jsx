@@ -6,6 +6,8 @@ import Homework1 from "./components/Homework1";
 import PalindromeB from "./components/PalindromeB";
 import ClockB from "./components/ClockB";
 import TestEffect from "./components/TestEffect";
+import TestEffectCounter from "./components/TestEffectCounter";
+import Dice from "./components/Dice";
 
 class App extends Component {
 	constructor(props) {
@@ -25,8 +27,8 @@ class App extends Component {
 	}
 
 	render() {
-		console.log("App rendering");
-		console.log("state", this.state.showClockA);
+		// console.log("App rendering");
+		// console.log("state", this.state.showClockA);
 
 		return (
 			<div>
@@ -39,7 +41,8 @@ class App extends Component {
 					{/* <Palindrome /> */}
 					{/* <PalindromeB /> */}
 					{/* <ClockB /> */}
-					<TestEffect />
+					{/* <TestEffectCounter /> */}
+					<Dice />
 				</div>
 			</div>
 		);
