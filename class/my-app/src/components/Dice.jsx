@@ -33,7 +33,7 @@ const Dice = () => {
 
 	// const diceRolls = new Array(6).fill(null).map((el) => generateDiceNumber());
 
-	const diceRolls = useMemo(() => new Array(6).fill(null).map((el) => generateDiceNumber()), [handleClick]);
+	const diceRolls = useMemo(() => new Array(6).fill(null).map((el) => generateDiceNumber()), []);
 
 	return (
 		<div>

@@ -8,6 +8,7 @@ import ClockB from "./components/ClockB";
 import TestEffect from "./components/TestEffect";
 import TestEffectCounter from "./components/TestEffectCounter";
 import Dice from "./components/Dice";
+import Fetch from "./components/Fetch";
 
 class App extends Component {
 	constructor(props) {
@@ -42,7 +43,8 @@ class App extends Component {
 					{/* <PalindromeB /> */}
 					{/* <ClockB /> */}
 					{/* <TestEffectCounter /> */}
-					<Dice />
+					{/* <Dice /> */}
+					<Fetch />
 				</div>
 			</div>
 		);
