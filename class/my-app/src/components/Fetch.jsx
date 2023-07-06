@@ -1,35 +1,42 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import useFetch from "../hooks/useFetch";
+
+// function fetchData(url) {
+// 	return axios
+// 		.get(url)
+// 		.then((res) => {
+// 			const { data } = res;
+// 			setPosts(data);
+// 		})
+// 		.catch((err) => {
+// 			console.log("error", err);
+// 		});
+// }
 
 /**
  * Go over async/await syntax for promises
  * @returns
  */
 const Fetch = () => {
-	const [posts, setPosts] = useState(null);
+	const url = "https://jsonplaceholder.typicode.com/posts";
 
-	useEffect(() => {
-		// defining my fetchData function
-		const url = "https://jsonplaceholder.typicode.com/posts";
-		function fetchData(url) {
-			return axios
-				.get(url)
-				.then((res) => {
-					const { data } = res;
-					setPosts(data);
-				})
-				.catch((err) => {
-					console.log("error", err);
-				});
-		}
-
-		console.log("making api call");
-		// call/invoke fetchData
-		fetchData(url);
-		console.log("after making api call");
-	}, []);
+	const { posts, loading, error } = useFetch(url);
 
 	console.log("posts", posts);
+
+	if (loading)
+		return (
+			<div>
+				<h2>LOADING...</h2>
+			</div>
+		);
+
+	if (error)
+		return (
+			<div>
+				<h2>An error occurred: {error?.message}</h2>
+			</div>
+		);
 
 	return (
 		<div>
