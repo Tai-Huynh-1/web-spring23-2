@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 
 const useFetch = (url) => {
 	const [state, setState] = useState({
-		posts: null,
+		data: null,
 		loading: false,
 		error: null,
 	});
 
 	useEffect(() => {
-		setState({ posts: null, loading: true, error: null });
+		setState({ data: null, loading: true, error: null });
 		// defining my fetchData function
 
 		console.log("before making api call");
@@ -21,10 +21,10 @@ const useFetch = (url) => {
 				const result = await axios.get(url);
 				console.log("result", result);
 				const { data } = result;
-				setState({ posts: data, loading: false, error: null });
+				setState({ data: data, loading: false, error: null });
 			} catch (error) {
 				console.log("error", error);
-				setState({ posts: null, loading: false, error: error });
+				setState({ data: null, loading: false, error: error });
 			}
 		})(url);
 

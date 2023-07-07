@@ -9,6 +9,8 @@ import TestEffect from "./components/TestEffect";
 import TestEffectCounter from "./components/TestEffectCounter";
 import Dice from "./components/Dice";
 import Fetch from "./components/Fetch";
+import Users from "./components/Users";
+import LoginForm from "./components/LoginForm";
 
 class App extends Component {
 	constructor(props) {
@@ -44,7 +46,9 @@ class App extends Component {
 					{/* <ClockB /> */}
 					{/* <TestEffectCounter /> */}
 					{/* <Dice /> */}
-					<Fetch />
+					{/* <Fetch /> */}
+					{/* <Users /> */}
+					<LoginForm />
 				</div>
 			</div>
 		);

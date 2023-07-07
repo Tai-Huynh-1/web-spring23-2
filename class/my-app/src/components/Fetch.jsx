@@ -6,7 +6,7 @@ import useFetch from "../hooks/useFetch";
 // 		.get(url)
 // 		.then((res) => {
 // 			const { data } = res;
-// 			setPosts(data);
+// 			setdata(data);
 // 		})
 // 		.catch((err) => {
 // 			console.log("error", err);
@@ -18,11 +18,9 @@ import useFetch from "../hooks/useFetch";
  * @returns
  */
 const Fetch = () => {
-	const url = "https://jsonplaceholder.typicode.com/posts";
+	const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/posts");
 
-	const { posts, loading, error } = useFetch(url);
-
-	console.log("posts", posts);
+	console.log("data", data);
 
 	if (loading)
 		return (
@@ -42,7 +40,7 @@ const Fetch = () => {
 		<div>
 			<h1>Fetch</h1>
 			<ul>
-				{posts?.map((post) => {
+				{data?.map((post) => {
 					return (
 						<li key={post.id}>
 							<h3>{post.id}</h3>
