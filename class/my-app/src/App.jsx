@@ -40,7 +40,7 @@ class App extends Component {
 					<button onClick={this.handleToggleClockA}>Toggle ClockA</button>
 				</div> */}
 
-				<div>
+				<div className="example">
 					{/* <Palindrome /> */}
 					{/* <PalindromeB /> */}
 					{/* <ClockB /> */}
