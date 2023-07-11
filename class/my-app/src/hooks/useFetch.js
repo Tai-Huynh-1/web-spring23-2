@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useFetch = (url) => {
+const useFetch = (url, deps) => {
 	const [state, setState] = useState({
 		data: null,
 		loading: false,
@@ -32,7 +32,7 @@ const useFetch = (url) => {
 		// fetchData(url);
 
 		console.log("after making api call");
-	}, []);
+	}, deps);
 
 	return state;
 };

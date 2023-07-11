@@ -60,7 +60,9 @@ const LoginForm = () => {
 
 					<Button type="submit">Login</Button>
 
-					<Button secondary>Go Back</Button>
+					<Button secondary onClick={() => console.log("GO BACK WAS CLICKED")}>
+						Go Back
+					</Button>
 				</form>
 			</div>
 		</div>
