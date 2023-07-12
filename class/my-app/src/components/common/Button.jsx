@@ -3,12 +3,16 @@
  * @param {*} param0 children, classname, secondary, and other props
  * @returns Button component
  */
-const Button = ({ children, rounded = "md", secondary = false, ...otherProps }) => {
+const Button = (props) => {
+	const { children, rounded = "md", secondary = false, ...otherProps } = props;
 	const roundedEdge = rounded === "sm" ? "rounded-sm" : rounded === "lg" ? "rounded-lg" : "rounded-md";
 
 	const backgroundColor = secondary ? "bg-orange-500" : "bg-indigo-500";
 
 	const styles = `${backgroundColor} text-white ${roundedEdge} p-1`;
+
+	console.log("props", props);
+	console.log("otherProps", otherProps);
 
 	return (
 		<button type="button" {...otherProps} className={styles}>
@@ -18,3 +22,7 @@ const Button = ({ children, rounded = "md", secondary = false, ...otherProps }) 
 };
 
 export default Button;
+
+//Rakesh: props {} - otherProps {onClick}
+//Mohana: props {secondary} - otherProps {onClick}
+//Rekha: props {children, secondary(true), onClick} - otherProps {onClick}

@@ -11,12 +11,10 @@ const UserHwk = () => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		console.log("useeffect");
+		setLoading(true);
 		if (userId === 0) return;
 
 		const fetchUser = async () => {
-			setLoading(true);
-
 			try {
 				const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
 				if (!response.ok) {

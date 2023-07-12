@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./common/Button";
+import Input from "./common/Input";
 
 const LoginForm = () => {
 	// TODO: set up state management (use just 1 state)
@@ -56,9 +57,14 @@ const LoginForm = () => {
 						<input className="border-2 border-black rounded-md px-2 py-1" type="password" id="password" required onChange={handleChange} />
 					</div>
 
+					<Input label="Email" id="email" />
+					<Input label="Password" id="password" />
+
 					{/* 2 buttons for submission or go back */}
 
-					<Button type="submit">Login</Button>
+					<Button type="submit" rounded="lg">
+						Login
+					</Button>
 
 					<Button secondary onClick={() => console.log("GO BACK WAS CLICKED")}>
 						Go Back
