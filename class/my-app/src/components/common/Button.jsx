@@ -11,9 +11,6 @@ const Button = (props) => {
 
 	const styles = `${backgroundColor} text-white ${roundedEdge} p-1`;
 
-	console.log("props", props);
-	console.log("otherProps", otherProps);
-
 	return (
 		<button type="button" {...otherProps} className={styles}>
 			{children}
@@ -22,7 +19,3 @@ const Button = (props) => {
 };
 
 export default Button;
-
-//Rakesh: props {} - otherProps {onClick}
-//Mohana: props {secondary} - otherProps {onClick}
-//Rekha: props {children, secondary(true), onClick} - otherProps {onClick}

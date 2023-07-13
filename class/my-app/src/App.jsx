@@ -13,6 +13,7 @@ import Users from "./components/Users";
 import LoginForm from "./components/LoginForm";
 import UserHwk from "./components/UserHwk";
 import User from "./components/User";
+import LiftingState from "./components/LiftingState";
 
 class App extends Component {
 	constructor(props) {
@@ -50,8 +51,9 @@ class App extends Component {
 					{/* <Dice /> */}
 					{/* <Fetch /> */}
 					{/* <Users /> */}
-					<LoginForm />
-					<User />
+					{/* <LoginForm />
+					<User /> */}
+					<LiftingState />
 				</div>
 			</div>
 		);

@@ -15,13 +15,12 @@
 import React from "react";
 
 const Input = (props) => {
-	console.log("props", props);
-	const { label, id } = props;
+	const { label, id, ...otherProps } = props;
 
 	return (
 		<div className="text-left flex justify-between">
 			<label htmlFor={id}>{label}</label>
-			<input id={id} className="border-2 border-black rounded-md px-2 py-1" />
+			<input id={id} className="border-2 border-black rounded-md px-2 py-1" {...otherProps} />
 		</div>
 	);
 };

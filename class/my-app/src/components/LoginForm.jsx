@@ -46,26 +46,24 @@ const LoginForm = () => {
 				<h1 className="text-xl text-indigo-500 mb-4 font-bold">Login</h1>
 				<form onSubmit={handleLogin} className="flex flex-col gap-4">
 					{/* email */}
-					<div className="text-left flex justify-between">
+					{/* <div className="text-left flex justify-between">
 						<label htmlFor="email">Email</label>
 						<input className="border-2 border-black rounded-md px-2 py-1" type="email" id="email" placeholder="user@domain.com" required onChange={handleChange} />
 					</div>
 
 					{/* password */}
-					<div className="text-left flex justify-between">
+					{/* <div className="text-left flex justify-between">
 						<label htmlFor="password">Password</label>
 						<input className="border-2 border-black rounded-md px-2 py-1" type="password" id="password" required onChange={handleChange} />
-					</div>
+					</div>{" "} */}
 
-					<Input label="Email" id="email" />
-					<Input label="Password" id="password" />
+					<Input label="Email" id="email" type="email" placeholder="user@domain.com" required onChange={handleChange} />
 
+					<Input label="Password" id="password" type="password" required onChange={handleChange} />
 					{/* 2 buttons for submission or go back */}
-
 					<Button type="submit" rounded="lg">
 						Login
 					</Button>
-
 					<Button secondary onClick={() => console.log("GO BACK WAS CLICKED")}>
 						Go Back
 					</Button>
